@@ -1,7 +1,7 @@
 {
   "name": "electron-quick-start",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Lap times tracker",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -9,14 +9,18 @@
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "timer",
+    "chronometer",
+    "race",
+    "track",
+    "lap"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Daniel Baroni",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^16.0.5"
+  },
+  "dependencies": {
+    "statman-stopwatch": "^2.13.0"
   }
 }

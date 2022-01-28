@@ -1,3 +1,30 @@
-/* styles.css */
+body {
+    background: rgb(122, 122, 122);
+    background: url("./imgs/tileBackground.jpg");
+}
 
-/* Add styles here to customize the appearance of your app */
+* {
+    padding: 0px;
+    outline: none;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+    font-family: 'seven_segment';
+    src: url('./fonts/seven_segment-webfont.woff2') format('woff2'),
+         url('./fonts/seven_segment-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#big-display {
+    text-align: center;
+    font-family: 'seven_segment';
+    color: black;
+    background-color: rgba(77, 77, 77, 0.842);
+    font-size: 28vw;
+    border: 6px solid black;
+    margin: 1vw;
+    border-radius: 3px;
+}
