@@ -21,6 +21,8 @@
     "electron": "^16.0.5"
   },
   "dependencies": {
+    "performance-now": "^2.1.0",
+    "serialport": "^10.3.0",
     "statman-stopwatch": "^2.13.0"
   }
 }

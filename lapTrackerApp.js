@@ -1,4 +1,4 @@
-const SerialPort = require("serialport");
+const { SerialPort } = require('serialport');
 const Stopwatch = require("statman-stopwatch");
 
 const stopwatch = new Stopwatch();
@@ -6,10 +6,11 @@ console.log("Waiting for start...");
 
 (async function() {
     let ports = await SerialPort.list();
-    let target = ports.find(p => p.manufacturer == "Arduino LLC (www.arduino.cc)");
+    let target = ports.find(p => p.manufacturer == "Arduino LLC");
     if (target) {
-        const port = new SerialPort(target.path, {
-          baudRate: 9600
+        const port = new SerialPort({
+            path: target.path,
+            baudRate: 9600
         });
         let data = "";
         port.on("data", (incomingData) => {

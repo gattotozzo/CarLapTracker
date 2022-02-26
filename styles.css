@@ -1,6 +1,8 @@
 body {
     background: rgb(122, 122, 122);
     background: url("./imgs/tileBackground.jpg");
+    height: 90vh;
+    overflow-y: hidden;
 }
 
 * {
@@ -18,13 +20,229 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'racespace';
+    src: url('./fonts/racespaceregular-webfont.woff2') format('woff2'),
+        url('./fonts/racespaceregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #big-display {
+    padding-top: 30px;
     text-align: center;
-    font-family: 'seven_segment';
+    font-family: 'racespace';
     color: black;
-    background-color: rgba(77, 77, 77, 0.842);
-    font-size: 28vw;
+    background-color: rgba(97, 97, 97, 0.842);
+    font-size: 20vw;
     border: 6px solid black;
     margin: 1vw;
     border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.split-d {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+
+.split-el {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.times {
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    margin: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.time {
+    margin: 10px;
+    font-size: 23px;
+    color: black;
+    display: flex;
+    background: rgba(168, 168, 168, 0.904);
+    height: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+.timestamp {
+    font-family: 'racespace';
+    font-size: 30px;
+}
+
+.racist-name {
+    font-family: 'racespace';
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    font-family: 'racespace';
+    text-transform: uppercase;
+    font-size: 35px;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: .1s;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.start {
+    background: rgba(61, 216, 94, 0.699);
+}
+
+.start:hover {
+    background: rgba(51, 184, 79, 0.699);
+}
+
+.start:active {
+    background: rgba(43, 156, 67, 0.699);
+}
+
+.stop {
+    background: rgba(250, 68, 68, 0.699);
+}
+
+.stop:hover {
+    background: rgba(197, 51, 51, 0.699);
+}
+
+.stop:active {
+    background: rgba(165, 40, 40, 0.699);
+}
+
+.reset {
+    background: rgba(211, 211, 68, 0.699);
+}
+
+.reset:hover {
+    background: rgba(185, 185, 57, 0.699);
+}
+
+.reset:active {
+    background: rgba(156, 156, 43, 0.699);
+}
+
+.auto {
+    background: rgba(77, 137, 248, 0.692);
+}
+
+.auto:hover {
+    background: rgb(68, 122, 223, 0.699);
+}
+
+.auto:active {
+    background: rgba(53, 100, 187, 0.699);
+}
+
+.auto-status-img {
+    width: 60px;
+    height: 60px;
+}
+
+.auto-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(158, 158, 158, 0.815);
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.title {
+    font-family: 'racespace';
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.portForm {
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+    background: rgba(168, 168, 168, 0.842);
+}
+
+#p-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-port {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+    background: rgb(185, 185, 185);
+    width: 40px;
+    height: 40px;
+    transition: .1s;
+}
+
+.btn-port:hover {
+    background: rgb(145, 143, 143);
+}
+
+.btn-port:active {
+    background: rgb(122, 120, 120);
+    transform: translateY(2px);
+}
+
+#port-sel {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#prompt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-family: 'racespace';
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.prompt-btn {
+    text-align: right;
+    margin: 10px;
+}
+
+.prompt-btn > button {
+    margin: 3px;
+}
+
+.txt-field {
+    margin: 5px;
+    font-size: 23px;
 }

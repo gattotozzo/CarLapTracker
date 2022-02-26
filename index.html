@@ -2,30 +2,73 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link href="./styles.css" rel="stylesheet">
     <title>Car Lap Tracker</title>
   </head>
   <body>
-    <div>
-      <div id="big-display">
-        00:00:00
+    <div id="p-tab" data-tab="port-selector">
+      <div class="portForm">
+        <h2 class="title">
+          Select port:
+        </h2>
+        <br>
+        <select name="port" id="port-sel">
+        </select>
+        <button id="refresh-ports" class="btn-port">
+          <img src="./imgs/refresh.svg" alt="">
+        </button>
+        <br>
+        <button id="port-ok" class="btn-port">
+          <img src="./imgs/plug.svg" alt="">
+        </button>
       </div>
     </div>
-    <div>
+    <div data-tab="main">
       <div>
-        <!-- lista tempi -->
+        <div id="big-display">
+          00:00:00
+        </div>
       </div>
-      <div>
-        <!-- butun manuali -->
-        <button></button>
-        <button></button>
-        <button></button>
+      <div class="split-d">
+        <div id="timelist" class="times split-el">
+            <!-- Primo tempo -->
+            <div class="time">
+              <div class="timestamp">
+                1:34:23
+              </div>
+              <div class="racist-name">
+                Mariano PorconaRo
+              </div>
+            </div>
+        </div>
+        <div class="split-el manual-btns">
+          <!-- butun manuali -->
+          <button id="startSw" class="btn start">Start</button>
+          <button id="stopSw" class="btn stop">Stop</button>
+          <button id="resetSw" class="btn reset">Reset</button>
+          <div style="display: flex;">
+            <button id="autoSw" class="btn auto">Auto</button>
+            <div class="auto-status">
+              <img id="autoimg" class="auto-status-img" src="./imgs/no_car.svg" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <div id="prompt">
+      <div>Inserisci nome pilota</div>
+      <input id="prompt-txt-field" class="txt-field" spellcheck="false" type="text">
+      <input type="hidden" id="time-val">
+      <div class="prompt-btn">
+        <button id="close-prompt" class="btn-port">
+          <img src="./imgs/close.svg" alt="">
+        </button>
+        <button id="confirm-prompt" class="btn-port">
+          <img src="./imgs/pilot_check.svg" alt="">
+        </button>
+      </div>
+    </div>
   </body>
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script src="./renderer.js"></script>
 </html>
