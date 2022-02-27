@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "car-lap-tracker",
   "version": "1.0.0",
-  "description": "Lap times tracker",
+  "description": "Track times of a rc car around a track",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/gattotozzo/CarLapTracker",
   "keywords": [
     "Electron",
     "timer",
