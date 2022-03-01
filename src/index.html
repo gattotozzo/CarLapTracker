@@ -24,12 +24,12 @@
       </div>
     </div>
     <div data-tab="main">
-      <div>
+      <div id="displayo">
         <div id="big-display">
           00:00:00
         </div>
       </div>
-      <div class="split-d">
+      <div class="split-d" id="controls">
         <div id="timelist" class="times split-el">
             <!-- Primo tempo -->
             <div class="time">
@@ -46,12 +46,17 @@
           <button id="startSw" class="btn start">Start</button>
           <button id="stopSw" class="btn stop">Stop</button>
           <button id="resetSw" class="btn reset">Reset</button>
+          <button id="deleteRec" class="btn clear">Clear All</button>
           <div style="display: flex;">
             <button id="autoSw" class="btn auto">Auto</button>
             <div class="auto-status">
               <img id="autoimg" class="auto-status-img" src="./imgs/no_car.svg" alt="">
             </div>
           </div>
+        </div>
+        <div class="logos">
+            <img src="./imgs/cb.png" alt="">
+            <img src="./imgs/events.png" alt="">
         </div>
       </div>
     </div>
@@ -68,6 +73,18 @@
         </button>
       </div>
     </div>
+
+    <div id="promptClear">
+      <div>Eliminare tutti i tempi?</div>
+        <button id="close-promptClear" class="btn-port">
+          <img src="./imgs/close.svg" alt="">
+        </button>
+        <button id="confirm-promptClear" class="btn-port">
+          <img src="./imgs/pilot_check.svg" alt="">
+        </button>
+      </div>
+    </div>
+    
   </body>
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/renderer.js"></script>

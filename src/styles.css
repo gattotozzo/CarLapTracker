@@ -1,6 +1,6 @@
 body {
     background: rgb(122, 122, 122);
-    background: url("./imgs/lego pattern.jpg");
+    background: url("./imgs/legopatern.jpg");
     height: 90vh;
     overflow-y: hidden;
 }
@@ -51,7 +51,6 @@ body {
 
 .split-el {
     flex-grow: 1;
-    width: 50%;
 }
 
 .times {
@@ -61,6 +60,7 @@ body {
     margin: 10px;
     border-radius: 10px;
     flex-direction: column;
+    width: 50%;
 }
 
 .time {
@@ -138,6 +138,18 @@ body {
 
 .reset:active {
     background: rgba(156, 156, 43, 0.699);
+}
+
+.clear {
+    background: rgba(255, 187, 61, 0.699);
+}
+
+.clear:hover {
+    background: rgba(197, 145, 48, 0.699);
+}
+
+.clear:active {
+    background: rgba(149, 111, 40, 0.699);
 }
 
 .auto {
@@ -233,6 +245,21 @@ body {
     border: 2px solid black;
 }
 
+#promptClear {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-family: 'racespace';
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
 .prompt-btn {
     text-align: right;
     margin: 10px;
@@ -245,4 +272,17 @@ body {
 .txt-field {
     margin: 5px;
     font-size: 23px;
+}
+
+
+.manual-btns {
+    width: 30%;
+}
+
+.logos {
+    width: 20%;
+}
+
+.logos > img {
+    width: 100%;
 }

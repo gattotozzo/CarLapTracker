@@ -81,9 +81,27 @@ const showPrompt = (timo) => {
     $("#time-val").val(timo);
 };
 
+const hidePromptClear = () => {
+    $("#promptClear").hide();
+};
+
+const showPromptClear = () => {
+    $("#promptClear").show();
+};
+
+const resizeElements = () => {
+    let controls = document.getElementById("controls");
+    let newHeight = window.innerHeight - 10 - document.getElementById("displayo").clientHeight;
+    controls.style.height = `${newHeight}px`;
+}
+
+
 
 window.addEventListener("DOMContentLoaded", async () => {
+    window.addEventListener("resize", resizeElements);
+    resizeElements();
     hidePrompt();
+    hidePromptClear();
     if (!window.localStorage.getItem("times")) {
         window.localStorage.setItem("times", JSON.stringify([]));
     } else {
@@ -104,21 +122,23 @@ window.addEventListener("DOMContentLoaded", async () => {
             $('#autoimg').attr("src", "./imgs/no_car.svg");
         }; 
 
-        let port = new SerialPort({
-            path: $('#port-sel').val(),
-            baudRate: 9600
-        });
-
-        port.on("data", (incomingData) => {
-            let data = incomingData.toString().toLowerCase();
-            if (isInAutomode) {
-                if (data.includes("start")) {
-                    $('#startSw').click();
-                } else if (data.includes("end")) {
-                    $('#stopSw').click();
+        if ($('#port-sel').val()) {
+            let port = new SerialPort({
+                path: $('#port-sel').val(),
+                baudRate: 9600
+            });
+    
+            port.on("data", (incomingData) => {
+                let data = incomingData.toString().toLowerCase();
+                if (isInAutomode) {
+                    if (data.includes("start")) {
+                        $('#startSw').click();
+                    } else if (data.includes("end")) {
+                        $('#stopSw').click();
+                    }
                 }
-            }
-        });
+            });
+        }
 
         let stopwatch = new Stopwatch();
         let display = $('#big-display');
@@ -151,8 +171,12 @@ window.addEventListener("DOMContentLoaded", async () => {
         $('#autoSw').click(() => {
             $('#autoimg').attr("src", "./imgs/waiting_car.svg");
             isInAutomode = true;
-        }) 
+        })
+        $('#deleteRec').click(() => {
+            showPromptClear();
+        })
     });
+    
     $("#close-prompt").click(() => {
         $("#prompt-txt-field").val("");
         hidePrompt();
@@ -167,4 +191,18 @@ window.addEventListener("DOMContentLoaded", async () => {
         hidePrompt();
         renderTimes();
     });
+      
+    $("#close-promptClear").click(() => {
+        $("#prompt-txt-field").val("");
+        hidePromptClear();
+    });
+    $("#confirm-confirm-promptClear").click(() => {
+        hidePromptClear();
+        window.localStorage.clear();
+        times = [];
+        renderTimes();
+    });
+
+    
+
 });
