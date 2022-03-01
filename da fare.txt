@@ -1,0 +1,4 @@
+- bottone elimina record
+- timer non spostare
+- forma semafero
+- inserimento logo
