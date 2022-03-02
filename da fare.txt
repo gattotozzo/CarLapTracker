@@ -1,4 +1,4 @@
-- bottone elimina record
-- timer non spostare
-- forma semafero
-- inserimento logo
+[x] bottone elimina record
+[x] timer non spostare
+[ ] forma semafero
+[x] inserimento logo

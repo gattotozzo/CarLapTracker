@@ -31,26 +31,23 @@
       </div>
       <div class="split-d" id="controls">
         <div id="timelist" class="times split-el">
-            <!-- Primo tempo -->
-            <div class="time">
-              <div class="timestamp">
-                1:34:23
-              </div>
-              <div class="racist-name">
-                Mariano PorconaRo
-              </div>
-            </div>
         </div>
         <div class="split-el manual-btns">
           <!-- butun manuali -->
-          <button id="startSw" class="btn start">Start</button>
-          <button id="stopSw" class="btn stop">Stop</button>
-          <button id="resetSw" class="btn reset">Reset</button>
-          <button id="deleteRec" class="btn clear">Clear All</button>
-          <div style="display: flex;">
-            <button id="autoSw" class="btn auto">Auto</button>
-            <div class="auto-status">
-              <img id="autoimg" class="auto-status-img" src="./imgs/no_car.svg" alt="">
+          <div>
+            <div class="semafurun">
+              <button id="stopSw" class="s-light btn stop">Stop</button>
+              <button id="resetSw" class="s-light btn reset">Reset</button>
+              <button id="startSw" class="s-light btn start">Start</button>
+            </div>
+          </div>
+          <div>
+            <button id="deleteRec" class="btn clear">Clear All</button>
+            <div style="display: flex;">
+              <button id="autoSw" class="btn auto">Auto</button>
+              <div class="auto-status">
+                <img id="autoimg" class="auto-status-img" src="./imgs/no_car.svg" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -75,13 +72,15 @@
     </div>
 
     <div id="promptClear">
-      <div>Eliminare tutti i tempi?</div>
-        <button id="close-promptClear" class="btn-port">
-          <img src="./imgs/close.svg" alt="">
-        </button>
-        <button id="confirm-promptClear" class="btn-port">
-          <img src="./imgs/pilot_check.svg" alt="">
-        </button>
+      <div>Eliminare tutti i tempi</div>
+        <div class="prompt-btn">
+          <button id="close-promptClear" class="btn-port">
+            <img src="./imgs/close.svg" alt="">
+          </button>
+          <button id="confirm-promptClear" class="btn-port">
+            <img src="./imgs/checkmark.svg" alt="">
+          </button>
+        </div>
       </div>
     </div>
     

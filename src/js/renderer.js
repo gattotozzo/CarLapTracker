@@ -8,14 +8,19 @@
 var times = [];
 
 function msToTime(duration) {
-    let milliseconds = Math.floor((duration % 1000) / 100),
+    let milliseconds = Math.floor((duration % 1000) / 10),
     seconds = Math.floor((duration / 1000) % 60),
     minutes = Math.floor((duration / (1000 * 60)) % 60);
   
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
   
-    return minutes + ":" + seconds + ":" + milliseconds;
+    if (milliseconds < 10) {
+        return minutes + ":" + seconds + ":0" + milliseconds;
+    } else {
+        return minutes + ":" + seconds + ":" + milliseconds;
+    }
+
 }
 
 /*
@@ -91,7 +96,7 @@ const showPromptClear = () => {
 
 const resizeElements = () => {
     let controls = document.getElementById("controls");
-    let newHeight = window.innerHeight - 10 - document.getElementById("displayo").clientHeight;
+    let newHeight = window.innerHeight - 50 - document.getElementById("displayo").clientHeight;
     controls.style.height = `${newHeight}px`;
 }
 
@@ -196,7 +201,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         $("#prompt-txt-field").val("");
         hidePromptClear();
     });
-    $("#confirm-confirm-promptClear").click(() => {
+    $("#confirm-promptClear").click(() => {
         hidePromptClear();
         window.localStorage.clear();
         times = [];
